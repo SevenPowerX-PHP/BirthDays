@@ -1,15 +1,12 @@
 #!/usr/bin/env php
 <?php
+include "src/Dates/BirthDays.php";
 
 $opts = getopt("b");
 
 $birthDate =$opts["b"] ?? "1977-08-10";
-$todayDate = date("Y-m-d");
+$days = new Splx\Dates\BirthDays($birthDate);
 
-$birthTime = strtotime($birthDate);
-$todayTime = strtoTime($todayDate);
-
-$totalSecs = $todayTime - $birthTime;
-$totalDays = floor($totalSecs / 3600 /24);
+$totalDays = $days->findTotalDays();
 
 echo "$birthDate : $totalDays" . PHP_EOL;
