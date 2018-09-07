@@ -12,4 +12,4 @@ $todayTime = strtoTime($todayDate);
 $totalSecs = $todayTime - $birthTime;
 $totalDays = floor($totalSecs / 3600 /24);
 
-echo "$birthDate : $totalDays\n";
+echo "$birthDate : $totalDays" . PHP_EOL;
